@@ -6,6 +6,7 @@ import typing_extensions as te
 import reapy
 import reapy.reascript_api as RPR
 from reapy.core import ReapyObject, ReapyObjectList
+from enum import IntFlag, IntEnum
 
 
 class CCShapeFlag(IntFlag):
