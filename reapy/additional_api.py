@@ -16,6 +16,18 @@ if is_inside_reaper():
 
 MAX_STRBUF = 4 * 1024 * 1024
 
+def packp(t, v):
+    m = re.match('^\((\w+\*|HWND)\)0x([0-9A-F]+)$', str(v))
+    if (m != None):
+        (_t, _v) = m.groups()
+            a = int(_v[:8], 16)
+        if (_t == t or t == 'void*'):
+            b = int(_v[8:], 16);
+            p = ct.c_uint64((a << 32) | b).value
+            # if (RPR_ValidatePtr(p,t)):
+            #   return p
+            return p
+    return 0
 
 def packp(t: str, v: ty.Union[int, str]) -> int:
     """
