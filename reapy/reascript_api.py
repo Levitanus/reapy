@@ -21,6 +21,11 @@ if reapy.is_inside_reaper():
     for s in _A_API.__dict__:
         exec("from reapy.additional_api import {}".format(s))
 
+    # from reapy.core.gui import _JS_API
+    # __all__.extend(_JS_API.__all__)
+    # for s in _JS_API.__all__:
+    #     exec("from reapy.core.gui._JS_API import {}".format(s))
+
     # Import SWS functions.
     try:
         sys.path.append(os.path.join(_RPR.RPR_GetResourcePath(), 'Scripts'))
