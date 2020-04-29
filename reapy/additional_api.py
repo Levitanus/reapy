@@ -17,7 +17,23 @@ if is_inside_reaper():
 MAX_STRBUF = 4 * 1024 * 1024
 
 
-def packp(t: str, v: str) -> int:
+def packp(t: str, v: ty.Union[int, str]) -> int:
+    """
+    Pack pointer to be passed in CFUNCTYPE call.
+
+    Parameters
+    ----------
+    t : str
+        type name e.g. MediaTrack*
+    v : Union[int, str]
+        pointer itself, can be int address, str address repr
+        and unpacked pointer e.g (MediaTrack*)0x000000000000AF0E
+
+    Returns
+    -------
+    int
+        address (pointer)
+    """
     m = re.match('^\((\w+\*|HWND)\)0x([0-9A-F]+)$', str(v))
     if (m != None):
         (_t, _v) = m.groups()
