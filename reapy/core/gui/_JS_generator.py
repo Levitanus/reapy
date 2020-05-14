@@ -304,6 +304,8 @@ else:
 MAX_STRBUF = 4 * 1024 * 1024
 
 __all__: ty.List[str] = [
+    "Pointer",
+    "VoidPtr",
     {all_}
 ]
 
@@ -346,7 +348,8 @@ class Pointer(ReapyObject):
 
 
 class VoidPtr(Pointer):
-    pass
+    def __init__(self, ptr: ty.Union[str, int]) -> None:
+        super().__init__(ptr)
 
 {class_defs}
 
