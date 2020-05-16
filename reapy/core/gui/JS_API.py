@@ -95,6 +95,16 @@ __all__.extend(
     ]
 )
 
+__all__.extend(
+    [
+        "Window_ArrayAllChildEx",
+        "Window_ArrayAllTopEx",
+        "Window_ArrayFindEx",
+        "MIDIEditor_ArrayAllEx",
+        "reaper_array_to_hwnd",
+    ]
+)
+
 
 @reapy.inside_reaper()
 def create_reaper_array(size: int = 100) -> ct.Structure:

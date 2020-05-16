@@ -348,8 +348,7 @@ class Pointer(ReapyObject):
 
 
 class VoidPtr(Pointer):
-    def __init__(self, ptr: ty.Union[str, int]) -> None:
-        super().__init__(ptr)
+    pass
 
 {class_defs}
 
