@@ -102,6 +102,10 @@ class RedoError(Exception):
         super().__init__(message)
 
 
+class ResourceLoadError(Exception):
+    pass
+
+
 class UndefinedEnvelopeError(Exception):
 
     def __init__(self, index, name, chunk_name):
