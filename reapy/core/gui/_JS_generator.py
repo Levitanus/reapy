@@ -304,8 +304,6 @@ else:
 MAX_STRBUF = 4 * 1024 * 1024
 
 __all__: ty.List[str] = [
-    "Pointer",
-    "VoidPtr",
     {all_}
 ]
 
