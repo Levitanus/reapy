@@ -12,6 +12,7 @@ from .project import Marker, Project, Region, TimeSelection
 from .track import AutomationItem, Send, Track, TrackList
 from .window import MIDIEditor, ToolTip, Window
 from .gui import JS_API as JS
+from . import gui
 
 __all__ = [
     # core.reapy_object
@@ -61,5 +62,6 @@ __all__ = [
     "ToolTip",
     "Window",
     # core.gui
+    "gui",
     "JS",
 ]
