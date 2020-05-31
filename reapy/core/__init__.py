@@ -62,6 +62,5 @@ __all__ = [
     "ToolTip",
     "Window",
     # core.gui
-    "gui",
     "JS",
 ]
