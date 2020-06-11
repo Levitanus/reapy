@@ -64,7 +64,7 @@ def object_hook(x):
         else:
             reapy_class = _CLASS_CACHE[x["class"]]
         obj = reapy_class(*x["args"], **x["kwargs"])
-        obj.state = x["state"]
+        obj._state_set(x["state"])
         return obj
     elif "__callable__" in x:
         module_name, name = x["module_name"], x["name"]
